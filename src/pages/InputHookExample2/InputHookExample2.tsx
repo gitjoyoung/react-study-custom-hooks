@@ -7,7 +7,8 @@ export default function InputHookExample2() {
     <div>
       <h1>인풋 훅 2 연습</h1>
       <p>
-        인풋 텍스트가 길이가 10자를 초과할 수 없고 넘으면 색이 바뀌는 훅을 사용
+        인풋훅의 조건을 활용 텍스트가 길이가 10자를 초과할 수 없고 넘으면 색이
+        바뀌는 훅을 사용
       </p>
       <input type="text" placeholder="name" {...name} />
     </div>

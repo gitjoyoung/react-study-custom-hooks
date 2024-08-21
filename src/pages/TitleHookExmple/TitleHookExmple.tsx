@@ -1,21 +1,8 @@
-import React, { useEffect } from "react";
-
-export const useTitle = (initialvalue: string) => {
-  const [title, setTitle] = React.useState(initialvalue);
-  const updateTitle = () => {
-    const htmlTitle = document.querySelector("title");
-    if (htmlTitle !== null) {
-      htmlTitle.innerText = title;
-    }
-  };
-
-  useEffect(updateTitle, [title]);
-  return setTitle;
-};
+import { useTitle } from "@/hooks/useTitle";
 
 export default function TitleHookExmple() {
   const title = useTitle("로딩...");
-  setTimeout(() => title("Title 컴포넌트"), 3000);
+  setTimeout(() => title("Title 컴포넌트"), 3000); // 지연 설정
   return (
     <div>
       <p>
