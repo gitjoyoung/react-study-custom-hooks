@@ -1,3 +1,6 @@
+import MainLayout from "@/component/LayOut/MainLayout";
+import BodyFont from "@/component/typography/BodyFont";
+import HeadingFont from "@/component/typography/HeadingFont";
 import { useConfirm } from "@/hooks/useConfirm";
 
 export default function ConfirmHookExample() {
@@ -6,9 +9,10 @@ export default function ConfirmHookExample() {
   const confirmDelete = useConfirm("Are you sure", deleteWorld, abort);
 
   return (
-    <div>
-      <h1>승인 훅</h1>
+    <MainLayout>
+      <HeadingFont>버튼 훅 : useConfirm</HeadingFont>
+      <BodyFont>버튼 클릭시 알럿 창에서 승인과 거절을 관리 하는 훅</BodyFont>
       <button onClick={confirmDelete}>Delete the world</button>
-    </div>
+    </MainLayout>
   );
 }

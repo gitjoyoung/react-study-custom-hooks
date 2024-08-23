@@ -8,6 +8,7 @@ export default function Header() {
     ROUTE.TITLE_HOOK_EXAMPLE,
     ROUTE.ClICK_HOOK_EXAMPLE,
     ROUTE.CONFIRM_HOOK_EXAMPLE,
+    ROUTE.PREVENT_LEAVE_HOOK_EXAMPLE,
   ];
   return (
     <div className="bg-green-400 py-3 ">
