@@ -1,7 +1,7 @@
 import MainLayout from "@/component/LayOut/MainLayout";
 import BodyFont from "@/component/typography/BodyFont";
 import HeadingFont from "@/component/typography/HeadingFont";
-import { usePreventLeave } from "@/hooks/PreventLeaveExample";
+import { usePreventLeave } from "@/hooks/PreventLeave";
 
 export default function PreventLeaveExample() {
   const { enablePrevent, disablePrevent } = usePreventLeave();
