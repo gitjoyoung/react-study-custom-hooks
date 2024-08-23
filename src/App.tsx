@@ -6,7 +6,11 @@ function App() {
   return (
     <>
       <Header />
-      <Outlet />
+      <section>
+        <div className="flex justify-start p-3  items-center border border-black w-full h-full min-h-32">
+          <Outlet />
+        </div>
+      </section>
       <Footer />
     </>
   );

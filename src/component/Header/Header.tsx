@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   const routeList = [
-    ROUTE.HOME,
     ROUTE.INPUT_HOOK_EXAMPLE,
     ROUTE.INPUT_HOOK_EXAMPLE2,
     ROUTE.TITLE_HOOK_EXAMPLE,
@@ -15,9 +14,13 @@ export default function Header() {
       <Link className="border p-1 rounded-md" to={ROUTE.HOME}>
         홈 화면
       </Link>
-      <div className="flex gap-2 bg-white">
+      <div className="flex gap-2 bg-transparent">
         {routeList.map((route) => (
-          <Link className="border border-black" to={route} key={route}>
+          <Link
+            className="border border-black rounded-sm p-1 bg-white"
+            to={route}
+            key={route}
+          >
             {route}
           </Link>
         ))}
