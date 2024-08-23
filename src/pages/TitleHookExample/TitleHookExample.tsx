@@ -1,6 +1,6 @@
 import { useTitle } from "@/hooks/useTitle";
 
-export default function TitleHookExmple() {
+export default function TitleHookExample() {
   const title = useTitle("로딩...");
   setTimeout(() => title("Title 컴포넌트"), 3000); // 지연 설정
   return (
