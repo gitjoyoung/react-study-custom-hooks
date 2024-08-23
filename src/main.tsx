@@ -7,6 +7,7 @@ import InputHookExample from "./pages/InputHookExample/InputHookExample.tsx";
 import InputHookExample2 from "./pages/InputHookExample2/InputHookExample2.tsx";
 import { ROUTE } from "./constant/route.ts";
 import TitleHookExmple from "./pages/TitleHookExmple/TitleHookExmple.tsx";
+import ClickHookExample from "./pages/ClickHookExample/ClickHookExample.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: ROUTE.TITLE_HOOK_EXAMPLE,
         element: <TitleHookExmple />,
+      },
+      {
+        path: ROUTE.ClICK_HOOK_EXAMPLE,
+        element: <ClickHookExample />,
       },
     ],
   },
