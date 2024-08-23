@@ -5,4 +5,5 @@ export const ROUTE = {
   TITLE_HOOK_EXAMPLE: "/title-hook-example",
   ClICK_HOOK_EXAMPLE: "/click-hook-example",
   CONFIRM_HOOK_EXAMPLE: "/confirm-hook-example",
+  PREVENT_LEAVE_HOOK_EXAMPLE: "/prevent-leave-hook-example",
 };
