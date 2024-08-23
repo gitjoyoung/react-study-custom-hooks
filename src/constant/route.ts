@@ -4,4 +4,5 @@ export const ROUTE = {
   INPUT_HOOK_EXAMPLE2: "/input-hook-example2",
   TITLE_HOOK_EXAMPLE: "/title-hook-example",
   ClICK_HOOK_EXAMPLE: "/click-hook-example",
+  CONFIRM_HOOK_EXAMPLE: "/confirm-hook-example",
 };
