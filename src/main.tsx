@@ -10,6 +10,7 @@ import ClickHookExample from "./pages/ClickHookExample/ClickHookExample.tsx";
 import ConfirmHookExample from "./pages/ConfirmHookExample/ConfirmHookExample.tsx";
 import TitleHookExample from "./pages/TitleHookExample/TitleHookExample.tsx";
 import PreventLeaveExample from "./pages/PreventLeaveExample/PreventLeaveExample.tsx";
+import BeforeLeaveExample from "./pages/BeforeLeaveExample/BeforeLeaveExample.tsx";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: ROUTE.PREVENT_LEAVE_HOOK_EXAMPLE,
         element: <PreventLeaveExample />,
+      },
+      {
+        path: ROUTE.BEFORE_LEAVE_EXAMPLE,
+        element: <BeforeLeaveExample />,
       },
     ],
   },
