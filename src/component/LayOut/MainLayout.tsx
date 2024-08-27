@@ -5,6 +5,8 @@ interface Props {
 }
 export default function MainLayout({ children }: Props) {
   return (
-    <div className="border border-black w-full p-2 rounded-xl ">{children}</div>
+    <div className="border border-black w-full p-3 mx-1 my-2 rounded-xl ">
+      {children}
+    </div>
   );
 }

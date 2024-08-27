@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <section>
-        <div className="flex justify-start p-3 border border-black w-full h-[100vh] min-h-32">
+        <div className="flex justify-start border border-black w-full h-[100vh] min-h-32">
           <Outlet />
         </div>
       </section>
