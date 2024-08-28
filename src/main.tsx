@@ -11,6 +11,8 @@ import ConfirmHookExample from "./pages/ConfirmHookExample/ConfirmHookExample.ts
 import TitleHookExample from "./pages/TitleHookExample/TitleHookExample.tsx";
 import PreventLeaveExample from "./pages/PreventLeaveExample/PreventLeaveExample.tsx";
 import BeforeLeaveExample from "./pages/BeforeLeaveExample/BeforeLeaveExample.tsx";
+import FadeInHookExample from "./pages/FadeInHookExample/FadeInHookExample.tsx";
+import ImageHookExample from "./pages/ImageHookExample/ImageHookExample.tsx";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
       {
         path: ROUTE.BEFORE_LEAVE_EXAMPLE,
         element: <BeforeLeaveExample />,
+      },
+      {
+        path: ROUTE.FADE_IN_HOOK_EXAMPLE,
+        element: <FadeInHookExample />,
+      },
+      {
+        path: ROUTE.IMAGE_HOOK_EXAMPLE,
+        element: <ImageHookExample />,
       },
     ],
   },
