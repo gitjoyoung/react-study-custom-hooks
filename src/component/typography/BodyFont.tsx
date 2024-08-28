@@ -1,4 +1,5 @@
-type Props = { children?: React.ReactNode };
-export default function BodyFont({ children }: Props) {
-  return <h1 className="font-semi text-sm">{children}</h1>;
+type Props = { children?: React.ReactNode; className?: string };
+export default function BodyFont({ children, className }: Props) {
+  const classes = `font-semi text-sm ${className}`;
+  return <h1 className={classes}>{children}</h1>;
 }
