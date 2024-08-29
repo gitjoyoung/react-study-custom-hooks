@@ -1,12 +1,8 @@
-import PrimaryFont from "../typography/PrimaryFont";
-
 interface Props {
   children?: React.ReactNode;
+  className?: string;
 }
-export default function MainLayout({ children }: Props) {
-  return (
-    <div className="border border-black w-full p-3 mx-1 my-2 rounded-xl ">
-      {children}
-    </div>
-  );
+export default function MainLayout({ children, className }: Props) {
+  const style = `flex flex-col min-h-screen gap-4 ${className}`;
+  return <div className={style}>{children}</div>;
 }
