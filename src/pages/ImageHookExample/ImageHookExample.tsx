@@ -5,23 +5,27 @@ import * as d3 from "d3";
 import { useEffect, useRef, useState } from "react";
 
 // Custom hook to handle image labeling with bounding box
-const useImageLabel = (
-  src: string,
-  boxCoordinates: Array<{
-    x_min: number;
-    y_min: number;
-    x_max: number;
-    y_max: number;
-  }>,
-  visible: boolean
-) => {
-  const svgRef = useRef<SVGSVGElement>(null); // svg 엘리먼트를 참조하기 위한 ref
+type BoxCoordinates = {
+  IMG_LEFT: number;
+  IMG_TOP: number;
+  IMG_WIDTH: number;
+  IMG_HEIGHT: number;
+};
+
+const useImageLabel = (src: string, boxCoordinates: Array<BoxCoordinates>) => {
+  const [visible, setVisible] = useState(true);
+  const handleToggle = () => {
+    setVisible(!visible);
+  };
+
+  const svgRef = useRef<SVGSVGElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const svg = d3.select(svgRef.current); // svg 엘리먼트 선택
-    svg.selectAll("*").remove(); // 이전에 그려진 svg 요소를 모두 제거
+    const svg = d3.select(svgRef.current);
+    svg.selectAll("*").remove();
 
-    if (!visible) return; // visible 값이 false 일 경우 렌더링하지 않음
+    if (!visible) return;
 
     const img = new Image();
     img.src = src;
@@ -29,87 +33,139 @@ const useImageLabel = (
       const imgWidth = img.width;
       const imgHeight = img.height;
 
-      console.log("imgWidth", imgWidth, "imgHeight", imgHeight);
-      svg.attr("width", imgWidth).attr("height", imgHeight);
+      const containerWidth = containerRef.current?.clientWidth || 0;
+      const containerHeight = containerRef.current?.clientHeight || 0;
+
+      const scaleX = containerWidth / imgWidth;
+      const scaleY = containerHeight / imgHeight;
+
+      svg.attr("width", containerWidth).attr("height", containerHeight);
 
       boxCoordinates.forEach((item) => {
-        const { x_min, y_min, x_max, y_max } = item;
-        const width = x_max - x_min;
-        const height = y_max - y_min;
+        const { IMG_LEFT, IMG_TOP, IMG_WIDTH, IMG_HEIGHT } = item;
+        const text = "dataMatrix";
+
+        const adjustedLeft = IMG_LEFT * scaleX;
+        const adjustedTop = IMG_TOP * scaleY;
+        const adjustedWidth = IMG_WIDTH * scaleX;
+        const adjustedHeight = IMG_HEIGHT * scaleY;
+
         svg
           .append("rect")
-          .attr("x", x_min) // 투명 구멍 사각형의 x 위치
-          .attr("y", y_min) // 투명 구멍 사각형의 y 위치
-          .attr("width", width) // 투명 구멍 사각형의 너비
-          .attr("height", height) // 투명 구멍 사각형의 높이
-          .attr("stroke", "red") // 테두리 색상
-          .attr("stroke-width", 2) // 테두리 두께
-          .attr("fill", "none"); // 투명 구멍을 나타내기 위해 채우기 없음
+          .attr("x", adjustedLeft)
+          .attr("y", adjustedTop)
+          .attr("width", adjustedWidth)
+          .attr("height", adjustedHeight)
+          .attr("stroke", "red")
+          .attr("stroke-width", 2)
+          .attr("fill", "none");
 
-        // 라벨링 사각형 추가
         svg
           .append("rect")
-          .attr("x", x_min + width) // 라벨링 사각형의 x 위치 (구멍 사각형 옆에 위치)
-          .attr("y", y_min) // 라벨링 사각형의 y 위치
-          .attr("width", 100) // 라벨링 사각형의 너비
-          .attr("height", height) // 라벨링 사각형의 높이 (구멍 사각형과 동일한 높이)
-          .attr("fill", "red") // 라벨링 사각형의 배경 색상
-          .attr("stroke", "red"); // 라벨링 사각형의 테두리 색상
+          .attr("x", adjustedLeft + adjustedWidth)
+          .attr("y", adjustedTop)
+          .attr("width", 100)
+          .attr("height", adjustedHeight)
+          .attr("fill", "red")
+          .attr("stroke-width", 2)
+          .attr("stroke", "red");
 
-        // 라벨 텍스트 추가
         svg
           .append("text")
-          .attr("x", x_min + width) // 텍스트의 x 위치 (라벨링 사각형 안에 위치)
-          .attr("y", y_min + 10) // 텍스트의 y 위치 (라벨링 사각형의 중앙)
-          .attr("dy", ".35em") // 텍스트 세로 정렬
-          .attr("fill", "black") // 텍스트 색상
-          .text("Label Text"); // 텍스트 내용
+          .attr("x", adjustedLeft + adjustedWidth + 5)
+          .attr("y", adjustedTop + adjustedHeight / 2)
+          .attr("fill", "black")
+          .text(text)
+          .style("alignment-baseline", "middle");
       });
     };
   }, [src, boxCoordinates, visible]);
 
-  return svgRef;
+  return { svgRef, containerRef, visible, handleToggle };
 };
 
 export default function ImageHookExample() {
-  const [visible, setVisible] = useState(true);
-  const handleToggle = () => {
-    setVisible(!visible);
-  };
-
   const boxCoordinatesArray = [
-    { x_min: 0, y_min: 0, x_max: 45, y_max: 55 },
-    { x_min: 160, y_min: 120, x_max: 230, y_max: 190 },
-    { x_min: 300, y_min: 80, x_max: 380, y_max: 150 },
+    {
+      IMG_LEFT: 2158,
+      IMG_TOP: 4424,
+      IMG_WIDTH: 77,
+      IMG_HEIGHT: 77,
+    },
+    {
+      IMG_LEFT: 2436,
+      IMG_TOP: 1519,
+      IMG_WIDTH: 79,
+      IMG_HEIGHT: 79,
+    },
+    {
+      IMG_LEFT: 3497,
+      IMG_TOP: 1492,
+      IMG_WIDTH: 87,
+      IMG_HEIGHT: 88,
+    },
+    {
+      IMG_LEFT: 4654,
+      IMG_TOP: 1436,
+      IMG_WIDTH: 77,
+      IMG_HEIGHT: 76,
+    },
+    {
+      IMG_LEFT: 3106,
+      IMG_TOP: 4558,
+      IMG_WIDTH: 74,
+      IMG_HEIGHT: 73,
+    },
+    {
+      IMG_LEFT: 4435,
+      IMG_TOP: 3377,
+      IMG_WIDTH: 74,
+      IMG_HEIGHT: 75,
+    },
+    {
+      IMG_LEFT: 4482,
+      IMG_TOP: 4110,
+      IMG_WIDTH: 96,
+      IMG_HEIGHT: 97,
+    },
+    {
+      IMG_LEFT: 4019,
+      IMG_TOP: 2792,
+      IMG_WIDTH: 72,
+      IMG_HEIGHT: 72,
+    },
   ];
-  const imageUrl = "/images/dataMatrix.jpg";
-  const svgRef = useImageLabel(imageUrl, boxCoordinatesArray, visible);
+  const imageUrl = "images/dataMatrix3.png";
+  const { svgRef, containerRef, handleToggle, visible } = useImageLabel(
+    imageUrl,
+    boxCoordinatesArray
+  );
 
   return (
-    <MainLayout>
+    <MainLayout className="">
       <HeadingFont>useImageLabel</HeadingFont>
       <BodyFont>이미지에 라벨을 표시하는 훅</BodyFont>
       <BodyFont>
         이미지의 좌표 배열을 받아서 이미지에 라벨을 표시합니다
       </BodyFont>
-
       <div className="flex my-2 items-center gap-2`">
         <input
-          className="border p-2 font-bold rounded-sm "
+          className="border p-2 font-bold rounded-sm"
           type="button"
           value="Toggle"
           onClick={handleToggle}
         />
         <BodyFont>{visible ? "라벨을 표시합니다" : "라벨을 숨깁니다"}</BodyFont>
       </div>
-
       <div
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
-        className={` inline-block border border-black bg-contain bg-no-repeat`}
+        ref={containerRef}
+        className="relative w-full h-full my-10  border-red-200"
       >
-        <svg ref={svgRef} />
+        <img
+          src={imageUrl}
+          className="w-full h-auto object-contain bg-no-repeat "
+        />
+        <svg ref={svgRef} className="absolute top-0 left-0" />
       </div>
     </MainLayout>
   );
