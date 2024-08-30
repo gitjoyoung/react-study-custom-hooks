@@ -9,4 +9,6 @@ export const ROUTE = {
   BEFORE_LEAVE_EXAMPLE: "/before-leave-example",
   FADE_IN_HOOK_EXAMPLE: "/fade-in-hook-example",
   IMAGE_HOOK_EXAMPLE: "/image-hook-example",
+  NETWORK_HOOK_EXAMPLE: "/network-hook-example",
+  SCROll_HOOK_EXAMPLE: "/scroll-hook-example",
 };
