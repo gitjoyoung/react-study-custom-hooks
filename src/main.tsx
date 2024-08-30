@@ -15,6 +15,7 @@ import FadeInHookExample from "./pages/FadeInHookExample/FadeInHookExample.tsx";
 import ImageHookExample from "./pages/ImageHookExample/ImageHookExample.tsx";
 import NetworkHookExample from "./pages/NetworkHookExample/NetworkHookExample.tsx";
 import ScrollHookExample from "./pages/ScrollHookExample/ScrollHookExample.tsx";
+import FullScreenHookExample from "./pages/FullScreenHookExample/FullScreenHookExample.tsx";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: ROUTE.SCROll_HOOK_EXAMPLE,
         element: <ScrollHookExample />,
+      },
+      {
+        path: ROUTE.FULL_SCREEN_HOOK_EXAMPLE,
+        element: <FullScreenHookExample />,
       },
     ],
   },

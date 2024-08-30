@@ -11,4 +11,5 @@ export const ROUTE = {
   IMAGE_HOOK_EXAMPLE: "/image-hook-example",
   NETWORK_HOOK_EXAMPLE: "/network-hook-example",
   SCROll_HOOK_EXAMPLE: "/scroll-hook-example",
+  FULL_SCREEN_HOOK_EXAMPLE: "/full-screen-hook-example",
 };
