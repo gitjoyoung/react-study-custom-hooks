@@ -20,7 +20,7 @@ export default function AxiosHookExample() {
           <PrimaryButton onClick={refetch}>다시 불러오기</PrimaryButton>
         )}
       </div>
-      <BodyFont> {data && JSON.stringify(data)} </BodyFont>
+      <pre className="text-xs">{data && JSON.stringify(data, null, 2)}</pre>{" "}
     </MainLayout>
   );
 }

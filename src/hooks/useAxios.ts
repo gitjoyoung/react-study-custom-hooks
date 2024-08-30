@@ -37,7 +37,8 @@ export const useAxios = (
   useEffect(() => {
     axiosInstance(opts)
       .then((data) => {
-        setState({ ...state, loading: false, data });
+        const res = data.data;
+        setState({ ...state, loading: false, data: res });
       })
       .catch((error) => {
         setState({ ...state, loading: false, error });
