@@ -17,6 +17,7 @@ import NetworkHookExample from "./pages/NetworkHookExample/NetworkHookExample.ts
 import ScrollHookExample from "./pages/ScrollHookExample/ScrollHookExample.tsx";
 import FullScreenHookExample from "./pages/FullScreenHookExample/FullScreenHookExample.tsx";
 import NotificationExample from "./pages/NotificationExample/NotificationExample.tsx";
+import AxiosHookExample from "./pages/AxiosHookExample/AxiosHookExample.tsx";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: ROUTE.NOTIFICATION_EXAMPLE,
         element: <NotificationExample />,
+      },
+      {
+        path: ROUTE.AXIOS_HOOK_EXAMPLE,
+        element: <AxiosHookExample />,
       },
     ],
   },

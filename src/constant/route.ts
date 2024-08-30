@@ -13,4 +13,5 @@ export const ROUTE = {
   SCROll_HOOK_EXAMPLE: "/scroll-hook-example",
   FULL_SCREEN_HOOK_EXAMPLE: "/full-screen-hook-example",
   NOTIFICATION_EXAMPLE: "/notification-example",
+  AXIOS_HOOK_EXAMPLE: "/axios-example",
 };
