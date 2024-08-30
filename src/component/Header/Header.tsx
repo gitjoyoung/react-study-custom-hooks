@@ -15,6 +15,7 @@ export default function Header() {
     ROUTE.NETWORK_HOOK_EXAMPLE,
     ROUTE.SCROll_HOOK_EXAMPLE,
     ROUTE.FULL_SCREEN_HOOK_EXAMPLE, 
+    ROUTE.NOTIFICATION_EXAMPLE,
   ];
   return (
     <div className="bg-green-400 py-3 ">

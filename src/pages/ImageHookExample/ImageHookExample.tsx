@@ -20,7 +20,7 @@ const useImageLabel = (src: string, boxCoordinates: Array<BoxCoordinates>) => {
 
   useEffect(() => {
     const svg = d3.select(svgRef.current); // svg 선택
-
+    svg.selectAll("*").remove(); // svg 초기화
     if (!visible || !containerRef.current) return; // visible 이 false 이거나 container 가 없으면 return
 
     const updateSVG = () => {

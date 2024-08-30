@@ -12,4 +12,5 @@ export const ROUTE = {
   NETWORK_HOOK_EXAMPLE: "/network-hook-example",
   SCROll_HOOK_EXAMPLE: "/scroll-hook-example",
   FULL_SCREEN_HOOK_EXAMPLE: "/full-screen-hook-example",
+  NOTIFICATION_EXAMPLE: "/notification-example",
 };
