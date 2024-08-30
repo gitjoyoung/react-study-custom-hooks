@@ -1,4 +1,7 @@
+## 배포주소 
+https://main--react-custom-hook-jy.netlify.app/scroll-hook-example
 # react hooks practice
+
 ### 리액트 훅스 연습
 - [x] useTitle
 - [x] useInput
@@ -7,8 +10,8 @@
 - [x] useFadeIn
 - [ ] useFullscreen
 - [ ] useHover
-- [ ] useNetwork
-- [ ] useScroll
+- [x] useNetwork
+- [x] useScroll
 - [ ] useTabs
 - [ ] usePreventLeave
 - [ ] useBeforeLeave
