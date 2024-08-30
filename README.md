@@ -8,15 +8,15 @@ https://main--react-custom-hook-jy.netlify.app/scroll-hook-example
 - [x] useClick
 - [x] useConfirm
 - [x] useFadeIn
-- [ ] useFullscreen
-- [ ] useHover
+- [x] useFullScreen
+- [x] useHover
 - [x] useNetwork
 - [x] useScroll
-- [ ] useTabs
-- [ ] usePreventLeave
-- [ ] useBeforeLeave
-- [ ] useNotification
-- [ ] useAxios
+- [x] useTabs
+- [x] usePreventLeave
+- [x] useBeforeLeave
+- [x] useNotification
+- [x] useAxios
 
 # React + TypeScript + Vite
 
