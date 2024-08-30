@@ -13,6 +13,8 @@ import PreventLeaveExample from "./pages/PreventLeaveExample/PreventLeaveExample
 import BeforeLeaveExample from "./pages/BeforeLeaveExample/BeforeLeaveExample.tsx";
 import FadeInHookExample from "./pages/FadeInHookExample/FadeInHookExample.tsx";
 import ImageHookExample from "./pages/ImageHookExample/ImageHookExample.tsx";
+import NetworkHookExample from "./pages/NetworkHookExample/NetworkHookExample.tsx";
+import ScrollHookExample from "./pages/ScrollHookExample/ScrollHookExample.tsx";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +60,14 @@ const router = createBrowserRouter([
       {
         path: ROUTE.IMAGE_HOOK_EXAMPLE,
         element: <ImageHookExample />,
+      },
+      {
+        path: ROUTE.NETWORK_HOOK_EXAMPLE,
+        element: <NetworkHookExample />,
+      },
+      {
+        path: ROUTE.SCROll_HOOK_EXAMPLE,
+        element: <ScrollHookExample />,
       },
     ],
   },
