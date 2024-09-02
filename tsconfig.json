@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ESNext", //컴파일 될 때 ECMAScript의 목표 버전 설정 (ESNext는 가장 최신)
     "useDefineForClassFields": true, //클래스의 필드 초기화 방법
+    "typeRoots": ["./@types", "./node_modules/@types"],
     "lib": [
-      //TypeScirpt 컴파일러가 코드에서 사용할 수 있는 내장 라이브러리
       "ESNext",
       "DOM", // DOM 관련 API
       "DOM.Iterable" //DOM 관련 API
