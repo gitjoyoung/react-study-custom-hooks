@@ -7,7 +7,7 @@ export default function Header() {
       <div className="flex flex-wrap gap-2 bg-transparent">
         {Object.entries(ROUTE).map(([key, value], index) => (
           <Link
-            className="border border-black rounded-sm p-1 bg-white"
+            className="border border-black font-bold rounded-sm p-1 px-2 bg-white"
             to={value}
             key={key + index}
           >
