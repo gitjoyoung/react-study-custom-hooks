@@ -4,67 +4,71 @@ import Home from "@/pages/Home/Home";
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-// Lazy-loaded components
+// Lazy-loaded elements
 const routesConfig = [
   {
     path: ROUTE.INPUT_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/InputHookExample")),
+    element: lazy(() => import("@/pages/InputHookExample")),
   },
   {
     path: ROUTE.INPUT_HOOK_EXAMPLE2,
-    component: lazy(() => import("@/pages/InputHookExample2")),
+    element: lazy(() => import("@/pages/InputHookExample2")),
   },
   {
     path: ROUTE.TITLE_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/TitleHookExample")),
+    element: lazy(() => import("@/pages/TitleHookExample")),
   },
   {
     path: ROUTE.CLICK_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/ClickHookExample")),
+    element: lazy(() => import("@/pages/ClickHookExample")),
   },
   {
     path: ROUTE.CONFIRM_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/ConfirmHookExample")),
+    element: lazy(() => import("@/pages/ConfirmHookExample")),
   },
   {
     path: ROUTE.PREVENT_LEAVE_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/PreventLeaveExample")),
+    element: lazy(() => import("@/pages/PreventLeaveExample")),
   },
   {
     path: ROUTE.BEFORE_LEAVE_EXAMPLE,
-    component: lazy(() => import("@/pages/BeforeLeaveExample")),
+    element: lazy(() => import("@/pages/BeforeLeaveExample")),
   },
   {
     path: ROUTE.FADE_IN_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/FadeInHookExample")),
+    element: lazy(() => import("@/pages/FadeInHookExample")),
   },
   {
-    path: ROUTE.IMAGE_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/ImageHookExample")),
+    path: ROUTE.IMAGE_LABEL_HOOK_EXAMPLE,
+    element: lazy(() => import("@/pages/ImageLabelHookExample")),
   },
   {
     path: ROUTE.NETWORK_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/NetworkHookExample")),
+    element: lazy(() => import("@/pages/NetworkHookExample")),
   },
   {
     path: ROUTE.SCROLL_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/ScrollHookExample")),
+    element: lazy(() => import("@/pages/ScrollHookExample")),
   },
   {
     path: ROUTE.FULL_SCREEN_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/FullScreenHookExample")),
+    element: lazy(() => import("@/pages/FullScreenHookExample")),
   },
   {
     path: ROUTE.NOTIFICATION_EXAMPLE,
-    component: lazy(() => import("@/pages/NotificationExample")),
+    element: lazy(() => import("@/pages/NotificationExample")),
   },
   {
     path: ROUTE.AXIOS_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/AxiosHookExample")),
+    element: lazy(() => import("@/pages/AxiosHookExample")),
   },
   {
     path: ROUTE.SEARCH_HOOK_EXAMPLE,
-    component: lazy(() => import("@/pages/SearchHookExample")),
+    element: lazy(() => import("@/pages/SearchHookExample")),
+  },
+  {
+    path: ROUTE.DATAMATRIX_HOOK_EXAMPLE,
+    element: lazy(() => import("@/pages/DataMatrixHookExample")),
   },
 ];
 
@@ -79,7 +83,7 @@ const router = createBrowserRouter([
       },
       ...routesConfig.map((route) => ({
         path: route.path,
-        element: <route.component />,
+        element: <route.element />,
       })),
     ],
   },

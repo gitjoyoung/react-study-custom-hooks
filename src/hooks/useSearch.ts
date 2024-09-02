@@ -3,6 +3,7 @@ import { useState } from "react";
 export interface ISearchList {
   name: string;
   price: number;
+  group: string;
 }
 
 export const useSearch = (searchList: ISearchList[]) => {
@@ -13,6 +14,7 @@ export const useSearch = (searchList: ISearchList[]) => {
     _searchList: ISearchList[],
     _query: string
   ): ISearchList[] => {
+    if (!_query) return [];
     return _searchList.filter((item: ISearchList) =>
       item.name.includes(_query)
     );

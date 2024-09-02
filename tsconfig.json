@@ -19,6 +19,7 @@
     "noEmit": true, //컴파일 된 출력 생성 X
     "jsx": "react-jsx", //JSX 문법 사용시 처리 방법
     /* Linting */
+    "checkJs": false, //JS 파일 타입 체크
     "strict": true, //엄격한 타입 체크
     "noUnusedLocals": true, //사용하지 않는 지역 변수 알림
     "noUnusedParameters": true, //사용하지 않는 파라미터 알림

@@ -1,5 +1,11 @@
 import * as d3 from "d3";
 import { useEffect, useRef, useState } from "react";
+
+type BoxCoordinates = Record<
+  "IMG_LEFT" | "IMG_TOP" | "IMG_WIDTH" | "IMG_HEIGHT",
+  number
+>;
+
 export const useImageLabel = (
   src: string,
   boxCoordinates: Array<BoxCoordinates>

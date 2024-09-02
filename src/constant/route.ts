@@ -8,11 +8,12 @@ export const ROUTE = {
   PREVENT_LEAVE_HOOK_EXAMPLE: "/prevent-leave-hook-example",
   BEFORE_LEAVE_EXAMPLE: "/before-leave-example",
   FADE_IN_HOOK_EXAMPLE: "/fade-in-hook-example",
-  IMAGE_HOOK_EXAMPLE: "/image-hook-example",
+  IMAGE_LABEL_HOOK_EXAMPLE: "/image-label-hook-example",
   NETWORK_HOOK_EXAMPLE: "/network-hook-example",
   SCROLL_HOOK_EXAMPLE: "/scroll-hook-example",
   FULL_SCREEN_HOOK_EXAMPLE: "/full-screen-hook-example",
   NOTIFICATION_EXAMPLE: "/notification-example",
   AXIOS_HOOK_EXAMPLE: "/axios-example",
   SEARCH_HOOK_EXAMPLE: "/search-hook-example",
+  DATAMATRIX_HOOK_EXAMPLE: "/datamatrix-hook-example",
 };
