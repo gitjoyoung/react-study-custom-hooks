@@ -5,7 +5,7 @@ import { RouterProvider } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>페이지 로딩 중...</div>}>
       <RouterProvider router={router} />
     </Suspense>
   </StrictMode>
