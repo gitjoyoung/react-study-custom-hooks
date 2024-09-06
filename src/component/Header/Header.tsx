@@ -1,4 +1,4 @@
-import { ROUTE } from "@/constant/route";
+import { ROUTE } from "@/routes/route";
 import { Link } from "react-router-dom";
 
 export default function Header() {
