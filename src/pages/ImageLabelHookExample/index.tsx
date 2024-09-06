@@ -17,24 +17,29 @@ export default function ImageLabelHookExample() {
       <BodyFont>
         이미지의 좌표 배열을 받아서 이미지에 라벨을 표시합니다
       </BodyFont>
-      <div className="flex my-2 items-center gap-2`">
-        <input
-          className="border p-2 font-bold rounded-sm"
-          type="button"
-          value="Toggle"
-          onClick={handleToggle}
-        />
-        <BodyFont>{visible ? "라벨을 표시합니다" : "라벨을 숨깁니다"}</BodyFont>
-      </div>
 
-      <div className="relative w-full h-full my-10  border-red-200">
-        <img
-          ref={containerRef}
-          src={IMG_URL}
-          className="w-full h-auto object-contain bg-no-repeat "
-        />
+      <div className="flex justify-center  flex-col items-center">
+        <div className="flex my-2 items-center gap-2 border border-black">
+          <input
+            className="border p-2 font-bold rounded-sm"
+            type="button"
+            value="Toggle"
+            onClick={handleToggle}
+          />
+          <BodyFont className="w-[200px] items-center flex">
+            {visible ? "라벨을 표시합니다" : "라벨을 숨깁니다"}
+          </BodyFont>
+        </div>
 
-        <svg ref={svgRef} className="absolute top-0 left-0" />
+        <div className="relative w-[80%] h-full my-10  border-red-200">
+          <img
+            ref={containerRef}
+            src={IMG_URL}
+            className="w-full h-auto object-contain bg-no-repeat "
+          />
+
+          <svg ref={svgRef} className="absolute top-0 left-0" />
+        </div>
       </div>
     </MainLayout>
   );
