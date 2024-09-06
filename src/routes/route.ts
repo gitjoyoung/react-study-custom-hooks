@@ -16,4 +16,5 @@ export const ROUTE = {
   AXIOS_HOOK_EXAMPLE: "/axios-example",
   SEARCH_HOOK_EXAMPLE: "/search-hook-example",
   DATAMATRIX_HOOK_EXAMPLE: "/datamatrix-hook-example",
+  REACT_QUERRY_EXAMPLE : "/react-query-example"
 };

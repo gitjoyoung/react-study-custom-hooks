@@ -1,5 +1,5 @@
 import App from "@/App";
-import { ROUTE } from "@/constant/route";
+import { ROUTE } from "@/routes/route";
 import Home from "@/pages/Home/Home";
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
@@ -69,6 +69,10 @@ const routesConfig = [
   {
     path: ROUTE.DATAMATRIX_HOOK_EXAMPLE,
     element: lazy(() => import("@/pages/DataMatrixHookExample")),
+  },
+  {
+    path: ROUTE.REACT_QUERRY_EXAMPLE,
+    element: lazy(() => import("@/pages/ReactQueryExample")),
   },
 ];
 
